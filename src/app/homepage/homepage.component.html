@@ -1,0 +1,106 @@
+<!-- Navigation Bar -->
+<div class="container-fluid sticky-top">
+    <div class="row">
+        <nav class="navbar bg-info text-white">
+            <!-- Title -->
+            <div class="col-xl-10">
+                <h2>CURD Assignment</h2>
+            </div>
+            <!-- Add User Button -->
+            <div class="col-xl-2">
+                <button type="button" class="btn btn-success float-right"  data-toggle="modal" data-target="#addUserModal" (click)="clickAddUser()" title="Add a new user">
+                    <i class="fas fa-user-plus font-weight-light"></i> Add User</button>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Cards -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card float-left" *ngFor="let body of userData">
+                <div class="card-header">
+                    <img src="{{body.avatar}}" class="profileImg" alt="Profile Pic" >
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <!-- Name -->
+                            <label for="nameDisplay">Name: </label>
+                            <span id="nameDisplay" data-toggle="modal" data-target="#addUserModal" (click)="editUserDetails(body)" title="Click to edit information">
+                                {{body.name}} <i class="fas fa-user-edit font-weight-light text-info"></i>
+                            </span>
+                        </div>
+                        <div class="col-xl-12">
+                            <!-- Email -->
+                            <label for="emailDisplay">Email: </label>
+                            <span id="emailDisplay"> {{body.email}}</span>
+                        </div>
+                        <div class="col-xl-12">
+                            <!-- Age -->
+                            <label for="ageDisplay">Age: </label>
+                            <span id="ageDisplay"> {{body.age | age}}</span>
+                        </div>
+                        <div class="col-xl-12">
+                            <!-- Country -->
+                            <label for="countryDisplay">Country: </label>
+                            <span id="countryDisplay"> {{body.country}}</span>
+                        </div>
+                        <div class="col-xl-10">
+                            <button type="button" class="btn btn-outline-danger rounded-circle" (click)="deleteUserDetails(body)" title="Click to delete User">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                        <div class="col-xl-2">
+                            <button type="button" class="btn btn-info text-white" data-toggle="modal" data-target="#addUserModal" (click)="editUserDetails(body)" title="Click to edit information">
+                                <i class="fas fa-user-edit font-weight-light"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add User Modal -->
+<div class="modal" id="addUserModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add User</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" title="Close Modal"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue" class="form-group">
+                <!-- Image -->
+                <label for="avatar">Image: </label>
+                <input type="text" class="form-control" formControlName="avatar" id="avatar">
+                <!-- Name -->
+                <label for="Name">Name</label>
+                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+                <!-- Email -->
+                <label for="Email">Email</label>
+                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+                <!-- Age -->
+                <label for="age">Age</label>
+                <input type="date" formControlName="age" class="form-control" id="age" placeholder="Age">
+                <!-- Country -->
+                <label for="country">Country</label>
+                <select id="country" name="country" formControlName="country" class="form-control">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Russia">Russia</option>
+                    <option value="UAE">UAE</option>
+                    <option value="France">France</option>
+                </select>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="cancelUser" data-dismiss="modal" title="Close Modal"><i class="fas fa-times font-weight-light"></i></button>
+          <button type="button" *ngIf="showAdd" class="btn btn-info text-white" (click)="postUserDetails()" title="Click to save new user"><i class="fas fa-user-plus font-weight-light"></i></button>
+          <button type="button" *ngIf="showUpdate" class="btn btn-success text-white" (click)="updateUserDetails()" title="Save updated information"><i class="fas fa-check-double font-weight-light"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>

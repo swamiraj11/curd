@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "name": "Swamiraj Anarse",
+      "email": "swamiraj.anarse@waiin.com",
+      "age": "1998-12-11",
+      "country": "India",
+      "avatar": "https://365webresources.com/wp-content/uploads/2016/09/FREE-PROFILE-AVATARS.png"
+    },
+    {
+      "id": 5,
+      "name": "Abhijeet Jawale",
+      "email": "abhijeet.jawale@waiin.com",
+      "age": "1996-12-03",
+      "country": "India",
+      "avatar": "https://trendsinusa.com/wp-content/uploads/2018/01/Miniclip-8-Ball-Pool-Avatar-16.png"
+    },
+    {
+      "id": 6,
+      "name": "Nitin Sonawane",
+      "email": "nitin.sonawane@waiin.com",
+      "age": "1997-08-19",
+      "country": "India",
+      "avatar": "https://trendsinusa.com/wp-content/uploads/2018/01/Miniclip-8-Ball-Pool-Avatar-16.png"
+    },
+    {
+      "id": 7,
+      "name": "Rahul Hajare",
+      "email": "rahul.hajare@waiin.com",
+      "age": "1996-07-05",
+      "country": "India",
+      "avatar": "https://trendsinusa.com/wp-content/uploads/2018/01/Miniclip-8-Ball-Pool-Avatar-16.png"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

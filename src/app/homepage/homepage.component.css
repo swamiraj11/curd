@@ -1,0 +1,40 @@
+/* Font Family */
+.container-fluid, .card{
+    font-family: Poppins;
+}
+.profileImg{
+    height: 35%;
+    width: 35%;
+}
+label{
+    font-weight: bold;
+    font-size: 17px;
+}
+#nameDisplay{
+    cursor: pointer;
+}
+/* NavBar */
+nav{
+    box-shadow: 3px 0px 10px 10px #ccc;
+}
+/* Card */
+.card{
+    margin: 3% 3% 5% 3%;
+    box-shadow: 3px 3px 10px 10px #ccc;
+    transition: 0.5s;
+}
+.card:hover{
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+}
+@media screen and (min-width: 576px) {
+    .card{
+        width: 40%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .card{
+        width: 25%;
+    }
+}
